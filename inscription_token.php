@@ -16,14 +16,15 @@
         $data = $check->fetch();
         $row = $check->rowCount();
 
-        $email = strtolower($email); // on transforme toute les lettres majuscule en minuscule pour éviter que Foo@gmail.com et foo@gmail.com soient deux compte différents ..
-        
+        $email = strtolower($email); // email transformé en minuscule
+
+
         // Si la requete renvoie un 0 alors il n ya spas de user 
         if($row == 0){ 
-            if(strlen($pseudo) <= 100){ // On verifie que la longueur du pseudo <= 100
-                if(strlen($email) <= 100){ // On verifie que la longueur du mail <= 100
+            if(strlen($pseudo) <= 100){ // On check que la longueur du pseudo <= 100
+                if(strlen($email) <= 100){ // On check que la longueur du mail <= 100
                     if(filter_var($email, FILTER_VALIDATE_EMAIL)){ // Si l'email est de la bonne forme
-                        if($password === $password_retype){ // si les deux mdp saisis sont bon
+                        if($password === $password_retype){ // si les deux pwd saisis sont bon
 
                             // On hash pwd avec Bcrypt, via un coût de 12
                             $cost = ['cost' => 12];
