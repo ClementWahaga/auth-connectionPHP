@@ -6,28 +6,21 @@
             <link rel="stylesheet" href="style.css">
             <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
             <title>Connexion</title>
         </head>
         <body>
         <div class="cont">
            
-            <form action="inscription_traitement.php" method="post">
+            <form action="inscription_token.php" method="post">
                 <h2 class="text-center">Inscription</h2>       
-                <div class="form-group">
-                    <input type="text" name="pseudo" class="form-control" placeholder="Pseudo" required="required" autocomplete="off">
-                </div>
-                <div class="form-group">
-                    <input type="email" name="email" class="form-control" placeholder="Email" required="required" autocomplete="off">
-                </div>
-                <div class="form-group">
-                    <input type="password" name="password" class="form-control" placeholder="Mot de passe" required="required" autocomplete="off">
-                </div>
-                <div class="form-group">
-                    <input type="password" name="password_retype" class="form-control" placeholder="Re-tapez le mot de passe" required="required" autocomplete="off">
-                </div>
-                <div class="form-group">
+                
+                    <input type="text" name="pseudo"  placeholder="Pseudo" required="required" autocomplete="off"><br><br>
+                    <input type="email" name="email"  placeholder="Email" required="required" autocomplete="off"><br><br>
+                    <input type="password" name="password"  placeholder="Mot de passe" required="required" autocomplete="off"><br><br>
+                    <input type="password" name="password_retype"  placeholder="Re-tapez le mot de passe" required="required" autocomplete="off"><br><br>
                     <button type="submit" class="btn btn-primary btn-block">Inscription</button>
-                </div>   
+                   
             </form>
         </div>
         

@@ -11,7 +11,7 @@
         $email = strtolower($email); // email transformé en minuscule
         
         // check si luser  est inscrit dans la table user
-        $check = $bdd->prepare('SELECT pseudo, email, password, token FROM utilisateurs WHERE email = ?');
+        $check = $bdd->prepare('SELECT pseudo, email, password, token FROM user WHERE email = ?');
         $check->execute(array($email));
         $data = $check->fetch();
         $row = $check->rowCount();
@@ -21,10 +21,10 @@
         // Si > à 0 alors l'utilisateur existe
         if($row > 0)
         {
-            // Si le mail est bon niveau format
+            // Si le mail est bon format
             if(filter_var($email, FILTER_VALIDATE_EMAIL))
             {
-                // Si le mot de passe est le bon
+                // Si le mot de passe est  bon
                 if(password_verify($password, $data['password']))
                 {
                     // On créer la session et on redirige sur landing.php
