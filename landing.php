@@ -9,7 +9,7 @@
     }
 
     // On récupere les données de l'utilisateur
-    $req = $bdd->prepare('SELECT * FROM utilisateurs WHERE token = ?');
+    $req = $bdd->prepare('SELECT * FROM user WHERE token = ?');
     $req->execute(array($_SESSION['user']));
     $data = $req->fetch();
    
@@ -45,7 +45,7 @@
 
 
                 <div class="text-center">
-                        <h1 class="p-5">Bonjour <?php echo $data.['pseudo']; ?> !</h1>
+                        <h1 class="p-5">Bonjour <?=$data['pseudo']?> !</h1>
                         <hr />
                         <a href="deconnexion.php" class="btn btn-danger btn-lg">Déconnexion</a>
                         <!-- Button trigger modal -->
@@ -61,7 +61,7 @@
         
 
                                 
-        <!-- Modal -->
+        <!-- Modal 
         <div class="modal fade" id="change_password" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -115,7 +115,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
